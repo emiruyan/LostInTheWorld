@@ -1,0 +1,34 @@
+{
+    "name": "DefaultAction",
+    "maps": [
+        {
+            "name": "Robot",
+            "id": "494002d8-0270-4669-9650-05c5895ff640",
+            "actions": [
+                {
+                    "name": "RobotUp",
+                    "type": "PassThrough",
+                    "id": "e0168cc2-9175-4f47-9d36-a14ab2775a47",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1dded46e-ad6c-467d-862d-5ae08bbc4288",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RobotUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
