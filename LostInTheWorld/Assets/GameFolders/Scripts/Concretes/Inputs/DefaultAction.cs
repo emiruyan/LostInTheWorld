@@ -37,6 +37,15 @@ namespace LostInTheWorld.Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RobotRotator"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""ff8eddd5-1a25-445e-85d7-547c70692310"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -50,6 +59,39 @@ namespace LostInTheWorld.Inputs
                     ""action"": ""RobotUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""AD"",
+                    ""id"": ""461ec02c-754a-4afc-b688-79739e0839d0"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RobotRotator"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""de0aab8b-2a65-4ddc-9a13-8c914de41121"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RobotRotator"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""07e33667-79e2-4943-868f-9d31bad081ba"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RobotRotator"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -59,6 +101,7 @@ namespace LostInTheWorld.Inputs
             // Robot
             m_Robot = asset.FindActionMap("Robot", throwIfNotFound: true);
             m_Robot_RobotUp = m_Robot.FindAction("RobotUp", throwIfNotFound: true);
+            m_Robot_RobotRotator = m_Robot.FindAction("RobotRotator", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -119,11 +162,13 @@ namespace LostInTheWorld.Inputs
         private readonly InputActionMap m_Robot;
         private IRobotActions m_RobotActionsCallbackInterface;
         private readonly InputAction m_Robot_RobotUp;
+        private readonly InputAction m_Robot_RobotRotator;
         public struct RobotActions
         {
             private @DefaultAction m_Wrapper;
             public RobotActions(@DefaultAction wrapper) { m_Wrapper = wrapper; }
             public InputAction @RobotUp => m_Wrapper.m_Robot_RobotUp;
+            public InputAction @RobotRotator => m_Wrapper.m_Robot_RobotRotator;
             public InputActionMap Get() { return m_Wrapper.m_Robot; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -136,6 +181,9 @@ namespace LostInTheWorld.Inputs
                     @RobotUp.started -= m_Wrapper.m_RobotActionsCallbackInterface.OnRobotUp;
                     @RobotUp.performed -= m_Wrapper.m_RobotActionsCallbackInterface.OnRobotUp;
                     @RobotUp.canceled -= m_Wrapper.m_RobotActionsCallbackInterface.OnRobotUp;
+                    @RobotRotator.started -= m_Wrapper.m_RobotActionsCallbackInterface.OnRobotRotator;
+                    @RobotRotator.performed -= m_Wrapper.m_RobotActionsCallbackInterface.OnRobotRotator;
+                    @RobotRotator.canceled -= m_Wrapper.m_RobotActionsCallbackInterface.OnRobotRotator;
                 }
                 m_Wrapper.m_RobotActionsCallbackInterface = instance;
                 if (instance != null)
@@ -143,6 +191,9 @@ namespace LostInTheWorld.Inputs
                     @RobotUp.started += instance.OnRobotUp;
                     @RobotUp.performed += instance.OnRobotUp;
                     @RobotUp.canceled += instance.OnRobotUp;
+                    @RobotRotator.started += instance.OnRobotRotator;
+                    @RobotRotator.performed += instance.OnRobotRotator;
+                    @RobotRotator.canceled += instance.OnRobotRotator;
                 }
             }
         }
@@ -150,6 +201,7 @@ namespace LostInTheWorld.Inputs
         public interface IRobotActions
         {
             void OnRobotUp(InputAction.CallbackContext context);
+            void OnRobotRotator(InputAction.CallbackContext context);
         }
     }
 }
