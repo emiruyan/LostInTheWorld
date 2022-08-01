@@ -17,7 +17,7 @@ namespace LostInTheWorld.Movements
         }
         
         public void FixedTick()
-        {                                                                   //AddForce Standart x,y,z ' ye göre force gönderiyor.
+        {                                                                                        //AddForce Standart x,y,z ' ye göre force gönderiyor.
             _rigidbody.AddRelativeForce(Vector3.up * Time.deltaTime * _playerController.Force); //RelativeForce pozisyonumuza göre force gönderiyor.
         }
     }

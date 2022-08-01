@@ -34,7 +34,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -43,14 +43,14 @@ MonoBehaviour:
     y: 365.6
     width: 312
     height: 365.19998
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 11}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 11}
   - {fileID: 16}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 72
+  controlID: 70
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 127
+  controlID: 102
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -293,22 +293,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/GameFolders/Scripts/Concretes/Movements
+    - Assets/GameFolders/Scripts/Concretes/Inputs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/GameFolders/Scripts/Concretes/Movements
+  - Assets/GameFolders/Scripts/Concretes/Inputs
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\emir-\Documents\GitHub\LostInTheWorld\LostInTheWorld
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6c8a0000
-    m_LastClickedID: 35436
-    m_ExpandedIDs: 00000000f8680000fa680000fc680000fe680000006900006681000070810000
+    m_SelectedIDs: 0e690000
+    m_LastClickedID: 26894
+    m_ExpandedIDs: 00000000ec680000ee680000f0680000f2680000f4680000fe68000008690000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -336,7 +336,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f8680000fa680000fc680000fe68000000690000
+    m_ExpandedIDs: 00000000ec680000ee680000f0680000f2680000f4680000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -361,21 +361,21 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 5c6a0000
+    m_LastClickedInstanceID: 27228
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Mover
-      m_OriginalName: Mover
+      m_Name: DefaultAction
+      m_OriginalName: DefaultAction
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 35714
+      m_UserData: 27228
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -466,7 +466,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: d4faffff
       m_LastClickedID: -1324
-      m_ExpandedIDs: e4faffffee6400000e65000012650000
+      m_ExpandedIDs: d4faffffe4faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -482,7 +482,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -597,12 +597,12 @@ MonoBehaviour:
       layout: 4
     - dockPosition: 1
       containerId: overlay-container--right
-      floating: 1
+      floating: 0
       collapsed: 0
       displayed: 0
-      snapOffset: {x: -407.40002, y: -165.59998}
+      snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 3
+      snapCorner: 0
       id: Scene View/Camera
       index: 1
       layout: 4
@@ -715,9 +715,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.956089, y: -0.31318265, z: -3.1424522}
+    m_Target: {x: -5.510043, y: -2.5640922, z: 0}
     speed: 2
-    m_Value: {x: -1.956089, y: -0.31318265, z: -3.1424522}
+    m_Value: {x: -5.510043, y: -2.5640922, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -764,13 +764,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.05966495, y: 0.0095978435, z: -0.0005816798, w: 0.9982163}
+    m_Target: {x: 0.14482746, y: -0.047460012, z: 0.006963472, w: 0.9883411}
     speed: 2
-    m_Value: {x: 0.059662327, y: 0.009597422, z: -0.0005816542, w: 0.99817234}
+    m_Value: {x: 0.14482066, y: -0.047457784, z: 0.006963145, w: 0.98829466}
   m_Size:
-    m_Target: 8.321097
+    m_Target: 2.3144262
     speed: 2
-    m_Value: 8.321097
+    m_Value: 2.3144262
   m_Ortho:
     m_Target: 1
     speed: 2

@@ -10,7 +10,7 @@ namespace LostInTheWorld.Movements
         Rigidbody _rigidbody;
         PlayerController _playerController;
 
-        public Rotator(PlayerController playerController) //constructuro method 
+        public Rotator(PlayerController playerController) //constructor method 
         {
             _playerController = playerController; //ctor için cashledik
             _rigidbody = playerController.GetComponent<Rigidbody>();//ctor için cashledik
