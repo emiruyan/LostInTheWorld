@@ -186,9 +186,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc898bf78e34cc4c9577d7ed9ebe65e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFire: 100
-  currentFire: 0
-  fireParticle: {fileID: 824966909906241120}
+  _maxFire: 100
+  _currentFire: 0
+  _fireParticle: {fileID: 824966909906241120}
 --- !u!1001 &699141444547308772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -276,7 +276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 82a2914d8f86c62488456950c8330e38, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.13
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 82a2914d8f86c62488456950c8330e38, type: 3}
       propertyPath: m_LocalPosition.y

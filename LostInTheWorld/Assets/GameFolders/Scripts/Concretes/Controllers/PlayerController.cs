@@ -10,17 +10,19 @@ namespace LostInTheWorld.Controllers
     {
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] float _force = 55f;
+        //[SerializeField] float _moveBoundary = 1f;
         
         Mover _mover; //Mover class'ımıza eriştik.
         DefaultInput _input; //Input System'a eriştik.
         Rotator _rotator;
-        FireParticleEffect _fireParticleEffect;
+        FireParticleEffect _fireParticleEffect; 
 
         bool _isRobotUp;
         float _robotRotator;
         
         public float TurnSpeed => _turnSpeed;
         public float Force => _force;
+        //public float MoveBoundary => _moveBoundary;
 
         private void Awake() //Component'lar ve cashlemeler
         {
@@ -45,7 +47,7 @@ namespace LostInTheWorld.Controllers
 
             _robotRotator = _input.RobotRotator;
          }
-        //Fire Particle Effect ile Inputlarımızı aynı bölümde kullandık çünkü birbiri ile iç içe kullanılabilir yapılar. Yukarı tuşuna bastığımızda Particle Effect aktif hale geliyor. Basmadığımızda aktif hale gelmiyor.
+        
 
        
 
