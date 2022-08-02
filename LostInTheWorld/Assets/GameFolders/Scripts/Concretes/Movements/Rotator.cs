@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace LostInTheWorld.Movements
 {
-    public class Rotator : MonoBehaviour
+    public class Rotator
     {
         Rigidbody _rigidbody;
         PlayerController _playerController;
