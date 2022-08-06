@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using LostInTheWorld.Managers;
 using LostInTheWorld.Movements;
 using UnityEngine;
 
@@ -15,8 +16,9 @@ namespace LostInTheWorld.Controllers
         Mover _mover; //Mover class'ımıza eriştik.
         DefaultInput _input; //Input System'a eriştik.
         Rotator _rotator;
-        FireParticleEffect _fireParticleEffect; 
+        FireParticleEffect _fireParticleEffect;
 
+        bool _canRobotMove;
         bool _isRobotUp;
         float _robotRotator;
         
@@ -32,8 +34,28 @@ namespace LostInTheWorld.Controllers
             _fireParticleEffect = GetComponent<FireParticleEffect>();
         }
 
+        private void Start()
+        {
+            _canRobotMove = true;
+        }
+
+        private void OnEnable() //Etkinleştirildiğinde
+        {
+            GameManager.Instance.OnGameOver += HandleOnEventTriggered;
+        }
+        
+        private void OnDisable()//Devre Dışı bırakıldığında
+        {
+            GameManager.Instance.OnGameOver -= HandleOnEventTriggered;   
+        }
+
         private void Update() //Input'umuzu Update'den alıyoruz.
          {
+             if (!_canRobotMove) //Player hareket edemiyorsa return et.
+             {
+                 return;
+             }
+             
              if (_input.IsRobotUp && !_fireParticleEffect.IsEmpty)  //Robotumuz kalkışa geçtiğinde ve fireParticle boş olduğunda.
             {
                 _isRobotUp = true;
@@ -59,6 +81,14 @@ namespace LostInTheWorld.Controllers
                 _fireParticleEffect.FireDecrease(0.2f); //Fire düşüşü
             }
             _rotator.FixedTick(_robotRotator);
+        }
+        
+        private void HandleOnEventTriggered() //Tetiklenecek yapılar
+        {
+            _canRobotMove = false; //Player öldüyse hareket edemeyecek
+            _isRobotUp = false; //Player öldüyse Yukarı güç uygulayamayacak.
+            _robotRotator = 0f; //Player öldüyse sağa sola hareket edemeyecek.
+            _fireParticleEffect.FireIncrease(0f);//Player öldüyse FireParticleEffect çalışmayacak.
         }
     }
 }

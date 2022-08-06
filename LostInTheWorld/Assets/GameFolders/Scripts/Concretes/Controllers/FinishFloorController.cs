@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using LostInTheWorld.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,7 +26,9 @@ namespace LostInTheWorld.Controllers
             }
             else
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //Oynanan sahneyi tekrar yükle(Game Over)
+                //Burada Game Manager'ı devreye sokarak artık bu aksiyonlarımızı GameManager üzerinden yapıyoruz. Bu aksiyonu önceden Unity içerisinde bulunan SceneManager(31.Satır) üzerinden yapıyorduk.
+                 GameManager.Instance.GameOver(); 
+                // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); Oynanan sahneyi tekrar yükle(Game Over)
             }
         }
     }
