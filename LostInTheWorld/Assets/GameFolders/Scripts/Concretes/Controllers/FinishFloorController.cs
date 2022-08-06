@@ -23,6 +23,7 @@ namespace LostInTheWorld.Controllers
             if (other.GetContact(0).normal.y == -1)//Player collider'a tam tepeden y pozisyonundan mı değiyor ?
             {
                 _finishParticleEffect.gameObject.SetActive(true);//Particle effecti' devreye sok
+                GameManager.Instance.LevelSuccessful();//Event 
             }
             else
             {

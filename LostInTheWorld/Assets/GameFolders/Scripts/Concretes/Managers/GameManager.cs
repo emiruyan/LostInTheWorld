@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace LostInTheWorld.Managers
 {
@@ -9,6 +10,7 @@ namespace LostInTheWorld.Managers
     public class GameManager : MonoBehaviour
     {
         public event Action OnGameOver; //Oyun bittiğinde, öldüğümüzde tetiklenecek bir event oluşturduk.
+        public event Action OnLevelSuccessful; //Leveli başarı ile tamamladığımızda tetiklenecek eventi oluşturduk.
 
         public static GameManager Instance { get;private set; }//Static tekildir. 
         
@@ -33,11 +35,40 @@ namespace LostInTheWorld.Managers
 
         public void GameOver()
         {
-            OnGameOver?.Invoke(); 
+            OnGameOver?.Invoke(); //OnGameOver boş değilse (!null) ise Invoke et.
+        }
+
+        public void LevelSuccessful()
+        {
+            OnLevelSuccessful?.Invoke(); //OnLevelSuccesful boş değilse (!null) ise Invoke et.
+        }
+
+        public void LoadLevelScene(int levelIndex = 0)//Menu UI,Button aksiyonlarında burayı çağıracağız.
+        {
+            StartCoroutine(LoadLevelSceneAsync(levelIndex));
         }
         
-    
-    }
+        //Coroutine methodlar diğer methodlardan farklı çalışır. Bir method bitmeden arka planda aykırı bir şekilde çalışabilir.
 
+        private IEnumerator LoadLevelSceneAsync(int levelIndex)//Arka planda Coroutine method çalışmaya devam edecek
+        {
+            yield return SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + levelIndex);
+        }
+
+        public void LoadMenuScene()//Player öldüğünde Menü'ye geçiş işlemleri
+        {
+            StartCoroutine(LoadMenuSceneAsync());//Menu işlemleri Coroutine Method üzerinden olacak.
+        }
+
+        private IEnumerator LoadMenuSceneAsync()
+        {
+            yield return SceneManager.LoadSceneAsync("Menu");
+;       }
+
+        // public void Exit()
+        // {
+        //     Application.Quit();
+        // }
+    }
 }
 
