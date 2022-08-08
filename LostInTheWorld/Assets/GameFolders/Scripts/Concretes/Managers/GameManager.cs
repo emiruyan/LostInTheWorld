@@ -65,10 +65,10 @@ namespace LostInTheWorld.Managers
             yield return SceneManager.LoadSceneAsync("Menu");
 ;       }
 
-        // public void Exit()
-        // {
-        //     Application.Quit();
-        // }
+        public void Exit()
+        {
+            Application.Quit();
+        }
     }
 }
 
