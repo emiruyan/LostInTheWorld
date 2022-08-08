@@ -14,7 +14,7 @@ namespace LostInTheWorld.Uis
 
         public void ExitClick()
         {
-            GameManager.Instance.Exit();
+            GameManager.Instance.Exit();     
         }
     }
 
