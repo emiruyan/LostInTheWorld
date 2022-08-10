@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using LostInTheWorld.Managers;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,7 @@ namespace LostInTheWorld.Controllers
     public class FinishFloorController : MonoBehaviour
     {
         [SerializeField] GameObject _finishParticleEffect;//Particle effecti verdil.
+        
 
         private void OnCollisionEnter(Collision other) //İki nesne arasında çarpışma gerçekleştiğinde
         {
@@ -23,7 +25,7 @@ namespace LostInTheWorld.Controllers
             if (other.GetContact(0).normal.y == -1)//Player collider'a tam tepeden y pozisyonundan mı değiyor ?
             {
                 _finishParticleEffect.gameObject.SetActive(true);//Particle effecti' devreye sok
-                GameManager.Instance.LevelSuccessful();//Event 
+                GameManager.Instance.LevelSuccessful();//Event  
             }
             else
             {
@@ -32,6 +34,7 @@ namespace LostInTheWorld.Controllers
                 // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); Oynanan sahneyi tekrar yükle(Game Over)
             }
         }
+        
     }
 
 }

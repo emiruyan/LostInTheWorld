@@ -1,0 +1,41 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using LostInTheWorld.Managers;
+using UnityEngine;
+
+namespace LostInTheWorld.Uis
+{
+    public class LevelSuccessfulObject : MonoBehaviour
+    {
+        [SerializeField] GameObject _levelSuccesfulPanel;
+        
+        private void Awake()
+        {
+            if (_levelSuccesfulPanel.activeSelf) //Level Succesful Panel Açık(True) ise bunu 
+            {
+                _levelSuccesfulPanel.SetActive(false); //False'a çeksin
+            }
+        }
+
+        private void OnEnable()
+        {
+            GameManager.Instance.OnLevelSuccessful += HandleOnLevelSuccesful;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.Instance.OnLevelSuccessful -= HandleOnLevelSuccesful;
+        }
+        
+        private void HandleOnLevelSuccesful() 
+        {
+            if (!_levelSuccesfulPanel.activeSelf) //Level Succesful Panel Kapalı(False) ise
+            {
+                _levelSuccesfulPanel.SetActive(true); //True'a çeksin
+            }
+        }
+    }
+
+}
+

@@ -11,6 +11,7 @@ namespace LostInTheWorld.Managers
     {
         public event Action OnGameOver; //Oyun bittiğinde, öldüğümüzde tetiklenecek bir event oluşturduk.
         public event Action OnLevelSuccessful; //Leveli başarı ile tamamladığımızda tetiklenecek eventi oluşturduk.
+        
 
         public static GameManager Instance { get;private set; }//Static tekildir. 
         
@@ -41,6 +42,7 @@ namespace LostInTheWorld.Managers
         public void LevelSuccessful()
         {
             OnLevelSuccessful?.Invoke(); //OnLevelSuccesful boş değilse (!null) ise Invoke et.
+            Debug.Log("LevelSuccesful");
         }
 
         public void LoadLevelScene(int levelIndex = 0)//Menu UI,Button aksiyonlarında burayı çağıracağız.
