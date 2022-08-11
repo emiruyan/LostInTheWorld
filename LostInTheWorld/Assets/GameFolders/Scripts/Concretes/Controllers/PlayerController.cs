@@ -24,6 +24,8 @@ namespace LostInTheWorld.Controllers
         
         public float TurnSpeed => _turnSpeed;
         public float Force => _force;
+
+        public bool CanRobotMove => _canRobotMove;
         //public float MoveBoundary => _moveBoundary;
 
         private void Awake() //Component'lar ve cashlemeler

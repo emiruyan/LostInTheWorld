@@ -17,7 +17,7 @@ namespace LostInTheWorld.Controllers
         {
             PlayerController player = other.collider.GetComponent<PlayerController>();//Player ve collider çarpıştığında 
 
-            if (player == null) //player null mı ?
+            if (player == null || !player.CanRobotMove) //player null mı ?
             {
                 return; //nullsa return et
             }
