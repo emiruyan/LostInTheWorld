@@ -464,7 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3426379c5ef854a4da6824059b948df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _direction: {x: 0, y: 5, z: 0}
+  _direction: {x: 0, y: 14, z: 0}
   _factor: 0
 --- !u!1 &1989916952965676
 GameObject:

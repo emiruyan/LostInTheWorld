@@ -42,7 +42,7 @@ namespace LostInTheWorld.Managers
         public void LevelSuccessful()
         {
             OnLevelSuccessful?.Invoke(); //OnLevelSuccesful boş değilse (!null) ise Invoke et.
-            Debug.Log("LevelSuccesful");
+            
         }
 
         public void LoadLevelScene(int levelIndex = 0)//Menu UI,Button aksiyonlarında burayı çağıracağız.
