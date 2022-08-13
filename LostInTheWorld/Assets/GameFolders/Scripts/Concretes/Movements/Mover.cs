@@ -9,6 +9,7 @@ namespace LostInTheWorld.Movements
     public class Mover: MonoBehaviour //Her classın kendi görevi olması için Player'ın hareket işlemlerini mover adlı classa taşıdık.
     {
         Rigidbody _rigidbody;
+        public Rigidbody rigidbody => _rigidbody;
         PlayerController _playerController;
         
         public Mover(PlayerController playerController) //constructor method
@@ -22,6 +23,8 @@ namespace LostInTheWorld.Movements
             //AddForce Standart x,y,z ' ye göre force gönderiyor.
             //RelativeForce pozisyonumuza göre force gönderiyor.
             _rigidbody.AddRelativeForce(Vector3.up * Time.deltaTime * _playerController.Force); 
+            
+            
         }
     }
     

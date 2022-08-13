@@ -26,6 +26,8 @@ namespace LostInTheWorld.Controllers
             {
                 _finishParticleEffect.gameObject.SetActive(true);//Particle effecti' devreye sok
                 GameManager.Instance.LevelSuccessful();//Event  
+                player.LevelSuccesfulTrigger();
+                
             }
             else
             {
@@ -33,6 +35,8 @@ namespace LostInTheWorld.Controllers
                  GameManager.Instance.GameOver(); 
                 // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); Oynanan sahneyi tekrar yükle(Game Over)
             }
+            
+            
         }
         
     }

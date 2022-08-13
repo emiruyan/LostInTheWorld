@@ -21,9 +21,8 @@ namespace LostInTheWorld.Controllers
         bool _canRobotMove;
         bool _isRobotUp;
         float _robotRotator;
-
-        public float _minX, _maxX, _minY, _maxY;
         
+        [SerializeField] Transform _minXy, _maxXy;
         
         public float TurnSpeed => _turnSpeed;
         public float Force => _force;
@@ -71,8 +70,6 @@ namespace LostInTheWorld.Controllers
             }
 
             _robotRotator = _input.RobotRotator;
-            
-            PlayerBoundaries();
          }
         
 
@@ -80,12 +77,20 @@ namespace LostInTheWorld.Controllers
 
         private void FixedUpdate() //Fixed Update'de fizik işlemlerimizi yapacağız.
         {
+            if (!_canRobotMove || _mover.rigidbody.isKinematic)
+            {
+                return;
+            }
+            
             if (_isRobotUp)
             {
                 _mover.FixedTick();
                 _fireParticleEffect.FireDecrease(0.2f); //Fire düşüşü
             }
             _rotator.FixedTick(_robotRotator);
+            
+            PlayerBoundaries();
+            
         }
         
         private void HandleOnEventTriggered() //Tetiklenecek yapılar
@@ -98,10 +103,17 @@ namespace LostInTheWorld.Controllers
 
         void PlayerBoundaries()
         {
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x, _minX, _maxX),
-                                             Mathf.Clamp(transform.position.y, _minY, _maxY), 0);
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, _minXy.position.x, _maxXy.position.x),
+                                             Mathf.Clamp(transform.position.y, _minXy.position.y, _maxXy.position.y), 0);
+        }
+
+        public void LevelSuccesfulTrigger()
+        {
+            _mover.rigidbody.isKinematic = true;
         }
     }
+    
+  
 }
 
 
