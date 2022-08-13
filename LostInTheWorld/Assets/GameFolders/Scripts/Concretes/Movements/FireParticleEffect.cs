@@ -14,6 +14,8 @@ namespace LostInTheWorld.Movements
 
         public bool IsEmpty => _currentFire < 1f;  //Current fire 1f'den küçük yakıtımız boştur.
 
+        public float CurrentFire => _currentFire / _maxFire; 
+
         private void Awake()
         {
             _currentFire = _maxFire;

@@ -9,14 +9,11 @@ namespace LostInTheWorld.Movements
     {
         Rigidbody _rigidbody;
         PlayerController _playerController;
-        //float _moveBoundary;
 
         public Rotator(PlayerController playerController) //constructor method 
         {
             _playerController = playerController; //ctor için cashledik
             _rigidbody = playerController.GetComponent<Rigidbody>();//ctor için cashledik
-            //_moveBoundary = playerController.MoveBoundary;
-
         }
 
         public void FixedTick(float direction)

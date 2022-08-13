@@ -11,6 +11,7 @@ namespace LostInTheWorld.Controllers
     {
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] float _force = 55f;
+        [SerializeField] Transform _minXy, _maxXy;
 
 
         Mover _mover; //Mover class'ımıza eriştik.
@@ -22,7 +23,7 @@ namespace LostInTheWorld.Controllers
         bool _isRobotUp;
         float _robotRotator;
         
-        [SerializeField] Transform _minXy, _maxXy;
+        
         
         public float TurnSpeed => _turnSpeed;
         public float Force => _force;
@@ -106,10 +107,10 @@ namespace LostInTheWorld.Controllers
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, _minXy.position.x, _maxXy.position.x),
                                              Mathf.Clamp(transform.position.y, _minXy.position.y, _maxXy.position.y), 0);
         }
-
-        public void LevelSuccesfulTrigger()
+     
+        public void PlayerOnFinishFloor()
         {
-            _mover.rigidbody.isKinematic = true;
+            _mover.rigidbody.isKinematic = true; //Player Finish Floor üzerine geldiğinde bütün hareketini durduruyoruz.
         }
     }
     

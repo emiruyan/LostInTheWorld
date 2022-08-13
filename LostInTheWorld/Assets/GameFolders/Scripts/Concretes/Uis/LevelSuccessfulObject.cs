@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using LostInTheWorld.Managers;
+using LostInTheWorld.Movements;
 using UnityEngine;
 
 namespace LostInTheWorld.Uis
@@ -9,6 +10,8 @@ namespace LostInTheWorld.Uis
     public class LevelSuccessfulObject : MonoBehaviour
     {
         [SerializeField] GameObject _levelSuccesfulPanel;
+
+        Mover _mover;
         
         private void Awake()
         {
@@ -34,7 +37,10 @@ namespace LostInTheWorld.Uis
             {
                 _levelSuccesfulPanel.SetActive(true); //True'a çeksin
             }
+            
+            
         }
+        
     }
 
 }
