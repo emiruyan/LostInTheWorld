@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using LostInTheWorld.Controllers;
@@ -5,11 +6,11 @@ using UnityEngine;
 
 namespace LostInTheWorld.Movements
 {
-    public class Mover: MonoBehaviour //Her classın kendi görevi olması için roketin hareket işlemlerini mover adlı classa taşıdık.
+    public class Mover: MonoBehaviour //Her classın kendi görevi olması için Player'ın hareket işlemlerini mover adlı classa taşıdık.
     {
         Rigidbody _rigidbody;
         PlayerController _playerController;
-
+        
         public Mover(PlayerController playerController) //constructor method
         {
             _playerController = playerController;

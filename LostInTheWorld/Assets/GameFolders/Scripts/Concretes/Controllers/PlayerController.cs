@@ -11,22 +11,23 @@ namespace LostInTheWorld.Controllers
     {
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] float _force = 55f;
-        //[SerializeField] float _moveBoundary = 1f;
-        
+
+
         Mover _mover; //Mover class'ımıza eriştik.
         DefaultInput _input; //Input System'a eriştik.
         Rotator _rotator;
         FireParticleEffect _fireParticleEffect;
-
+        
         bool _canRobotMove;
         bool _isRobotUp;
         float _robotRotator;
+
+        public float _minX, _maxX, _minY, _maxY;
+        
         
         public float TurnSpeed => _turnSpeed;
         public float Force => _force;
-        public bool CanRobotMove => _canRobotMove; 
-        
-        //public float MoveBoundary => _moveBoundary;
+        public bool CanRobotMove => _canRobotMove;
 
         private void Awake() //Component'lar ve cashlemeler
         {
@@ -70,6 +71,8 @@ namespace LostInTheWorld.Controllers
             }
 
             _robotRotator = _input.RobotRotator;
+            
+            PlayerBoundaries();
          }
         
 
@@ -91,6 +94,12 @@ namespace LostInTheWorld.Controllers
             _isRobotUp = false; //Player öldüyse Yukarı güç uygulayamayacak.
             _robotRotator = 0f; //Player öldüyse sağa sola hareket edemeyecek.
             _fireParticleEffect.FireIncrease(0f);//Player öldüyse FireParticleEffect çalışmayacak.
+        }
+
+        void PlayerBoundaries()
+        {
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, _minX, _maxX),
+                                             Mathf.Clamp(transform.position.y, _minY, _maxY), 0);
         }
     }
 }
