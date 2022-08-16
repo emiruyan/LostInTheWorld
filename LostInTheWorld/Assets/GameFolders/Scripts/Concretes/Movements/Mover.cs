@@ -9,6 +9,7 @@ namespace LostInTheWorld.Movements
     public class Mover: MonoBehaviour //Her classın kendi görevi olması için Player'ın hareket işlemlerini mover adlı classa taşıdık.
     {
         Rigidbody _rigidbody;
+
         public Rigidbody rigidbody => _rigidbody;
         PlayerController _playerController;
         
