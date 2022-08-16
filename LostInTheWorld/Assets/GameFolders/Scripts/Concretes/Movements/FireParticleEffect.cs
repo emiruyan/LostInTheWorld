@@ -30,6 +30,8 @@ namespace LostInTheWorld.Movements
             {
                 _fireParticle.Stop();
             }
+            
+            
         }
 
         public void FireDecrease(float decrease)//Fire Fx Düşüsü sağlandığında.

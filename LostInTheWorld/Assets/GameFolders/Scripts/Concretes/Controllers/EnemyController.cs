@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LostInTheWorld.Managers;
+using LostInTheWorld.Animations;
 
 namespace  LostInTheWorld.Controllers
 {
@@ -25,6 +26,7 @@ namespace  LostInTheWorld.Controllers
             if (player != null && player.CanRobotMove)
             {
                 GameManager.Instance.GameOver();
+                player.PlayerDeath();
             }
         }
 

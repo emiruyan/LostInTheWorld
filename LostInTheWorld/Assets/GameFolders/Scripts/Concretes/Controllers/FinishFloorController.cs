@@ -35,10 +35,6 @@ namespace LostInTheWorld.Controllers
                  GameManager.Instance.GameOver(); 
                 // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); Oynanan sahneyi tekrar yükle(Game Over)
             }
-            
-            
-            
-            
         }
         
     }

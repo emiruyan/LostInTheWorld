@@ -107,6 +107,8 @@ GameObject:
   - component: {fileID: 8225717183025879708}
   - component: {fileID: 992546240026361376}
   - component: {fileID: 1040548962}
+  - component: {fileID: 1554693360}
+  - component: {fileID: 1554693365}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -176,6 +178,7 @@ MonoBehaviour:
   _force: 55
   _minXy: {fileID: 0}
   _maxXy: {fileID: 0}
+  _animationController: {fileID: 1554693365}
 --- !u!114 &1040548962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +194,38 @@ MonoBehaviour:
   _maxFire: 100
   _currentFire: 0
   _fireParticle: {fileID: 824966909906241120}
+--- !u!95 &1554693360
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3910711992709820120}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 82a2914d8f86c62488456950c8330e38, type: 3}
+  m_Controller: {fileID: 9100000, guid: 2515e92d61563804ebf8428ae46c4e9c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1554693365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3910711992709820120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc414dcab12b8344a902a5bb7ed01c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &699141444547308772
 PrefabInstance:
   m_ObjectHideFlags: 0
