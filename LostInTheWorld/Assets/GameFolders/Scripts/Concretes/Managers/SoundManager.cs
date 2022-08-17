@@ -37,6 +37,11 @@ namespace LostInTheWorld.Managers
             }
             
         }
+
+        public void ChangeMasterVolume(float value)
+        {
+            AudioListener.volume = value;
+        }
     }
 }
 

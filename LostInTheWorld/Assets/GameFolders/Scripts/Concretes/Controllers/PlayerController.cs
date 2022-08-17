@@ -15,12 +15,7 @@ namespace LostInTheWorld.Controllers
         [SerializeField] float _force = 55f;
         [SerializeField] Transform _minXy, _maxXy;
         
-        // Ragdoll kullanılmadığında etkinleştirilmesi gereken Colliderlar
-        public Collider[] _colliderToEnable;
-        // Ragdoll kullanırken etkinleştirilen tüm Colliderları array olarak verdik
-        Collider[] _allCollider;
-        // Ragdoll tarafından kullanılan tüm itemları list ile verdik
-        List<Rigidbody> _ragdollRigidBodies=new List<Rigidbody>();
+        
 
         Mover _mover; //Mover class'ımıza eriştik.
         DefaultInput _input; //Input System'a eriştik.
@@ -128,38 +123,52 @@ namespace LostInTheWorld.Controllers
             EnableRagdoll(true);
         }
         
+        
+        // colliders that needs to be enabled when not using ragdoll
+        public Collider[] colliderToEnable;
+
+// rigidbody that is  activated when not using ragdoll
+   
+
+// all colliders that are activated when using ragdoll
+        Collider[] allCollider;
+
+// all the rigidbodies used by ragdoll
+        private List<Rigidbody> ragdollRigidBodies = new List<Rigidbody>();
 
         private void Init()
         {
-            _allCollider = GetComponentsInChildren<Collider>(); // Bu diziye bağlı olan bütün colliderları alıyoruz
-            foreach (var collider in _allCollider)
+            allCollider = GetComponentsInChildren<Collider>(); // get all the colliders that are attached
+            foreach (var collider in allCollider)
             {
-                if (collider.transform != transform) // Eğer bu parentin Transformu değilse
+                if (collider.transform != transform) // if this is not parent transform
                 {
-                    var rag_rb = collider.GetComponent<Rigidbody>(); // Eklediğimiz itemı al
+                    var rag_rb = collider.GetComponent<Rigidbody>(); // get attached rigidbody
                     if (rag_rb)
                     {
-                        _ragdollRigidBodies.Add(rag_rb); // Listeye ekle
+                        ragdollRigidBodies.Add(rag_rb); // add to list
                     }
                 }
             }
         }
         public void EnableRagdoll(bool enableRagdoll) {
             GetComponent<Animator>().enabled = !enableRagdoll;
-            foreach(Collider item in _allCollider) {
-                item.enabled = enableRagdoll; // Ragdoll etkin olarak ayarlanmışsa tüm Colliderları etkinleştir
+            foreach(Collider item in allCollider) {
+                item.enabled = enableRagdoll; // enable all colliders  if ragdoll is set to enabled
             }
 
-            foreach(var ragdollRigidBody in _ragdollRigidBodies) {
-                ragdollRigidBody.useGravity = enableRagdoll; //Ragdoll devredeyse gravity'i etkinleştir
-                ragdollRigidBody.isKinematic = !enableRagdoll; // Ragdoll devre değilse isKinematic etkinleştir
+            foreach(var ragdollRigidBody in ragdollRigidBodies) {
+                ragdollRigidBody.useGravity = enableRagdoll; // make rigidbody use gravity if ragdoll is active
+                ragdollRigidBody.isKinematic = !enableRagdoll; // enable or disable kinematic accordig to enableRagdoll variable
             }
 
-            foreach(Collider item in _colliderToEnable) {
-                item.enabled = !enableRagdoll; // Normal Colliderları aktif duruma çevir
+            foreach(Collider item in colliderToEnable) {
+                item.enabled = !enableRagdoll; // flip the normal colliders active state
             }
 
             GetComponent<Rigidbody>().useGravity = !enableRagdoll;
         }
+        
     }
 }
+
