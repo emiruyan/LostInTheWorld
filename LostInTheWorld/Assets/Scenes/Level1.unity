@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5170143, g: 0.37539226, b: 0.5572842, a: 1}
+  m_IndirectSpecularColor: {r: 0.5173713, g: 0.3754937, b: 0.5573019, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -618,6 +618,10 @@ PrefabInstance:
     - target: {fileID: 5165223219215579936, guid: c4934f02df4b7c740a04a8c75b66e13b, type: 3}
       propertyPath: m_Name
       value: GameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165223219215579936, guid: c4934f02df4b7c740a04a8c75b66e13b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5165223219215579948, guid: c4934f02df4b7c740a04a8c75b66e13b, type: 3}
       propertyPath: m_Pivot.x
