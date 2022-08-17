@@ -20,7 +20,7 @@ namespace LostInTheWorld.Uis
 
         private void OnEnable()
         {
-            GameManager.Instance.OnGameOver += HandleOnGameOver;
+            GameManager.Instance.OnGameOver += HandleOnGameOver; 
         }
         
         private void OnDisable()

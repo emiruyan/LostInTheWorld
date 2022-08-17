@@ -8,7 +8,6 @@ using LostInTheWorld.Controllers;
 public class DefaultInput : MonoBehaviour
 {
     [SerializeField] PlayerController _player;
-    [SerializeField] AnimationController _animationController;
     DefaultAction _input; 
     
 

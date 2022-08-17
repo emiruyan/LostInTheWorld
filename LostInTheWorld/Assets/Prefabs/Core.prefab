@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3856709733138915152}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.392662, y: -14.13733, z: -7.8560987}
+  m_LocalPosition: {x: -17.462662, y: -14.19333, z: -7.946099}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -231,14 +231,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3856709733430673592}
-  m_LocalRotation: {x: 0.3133715, y: -0.18405677, z: 0.06204924, w: 0.9295544}
+  m_LocalRotation: {x: 0.5167979, y: -0.20930637, z: -0.10459344, w: 0.82351136}
   m_LocalPosition: {x: 296, y: 988, z: -720}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3856709734941995488}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 37.26, y: -22.4, z: 0}
+  m_LocalEulerAnglesHint: {x: 53.842, y: -50.131, z: -41.196}
 --- !u!108 &3856709733430673595
 Light:
   m_ObjectHideFlags: 0
@@ -290,7 +290,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -326,7 +326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3856709734130700950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.392662, y: -14.13733, z: -7.8560987}
+  m_LocalPosition: {x: -17.462662, y: -14.19333, z: -7.946099}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -363,7 +363,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.98780483, y: 1}
+    m_SensorSize: {x: 0.7555168, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
