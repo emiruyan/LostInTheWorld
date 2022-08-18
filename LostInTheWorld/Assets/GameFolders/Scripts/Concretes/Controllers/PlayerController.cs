@@ -21,6 +21,12 @@ namespace LostInTheWorld.Controllers
         DefaultInput _input; //Input System'a eriştik.
         Rotator _rotator;
         FireParticleEffect _fireParticleEffect;
+        // colliders that needs to be enabled when not using ragdoll
+        public Collider[] colliderToEnable;
+        // all colliders that are activated when using ragdoll
+        Collider[] allCollider;
+        // all the rigidbodies used by ragdoll
+        private List<Rigidbody> ragdollRigidBodies = new List<Rigidbody>();
 
         bool _canRobotMove;
         bool _isRobotUp;
@@ -123,18 +129,6 @@ namespace LostInTheWorld.Controllers
             EnableRagdoll(true);
         }
         
-        
-        // colliders that needs to be enabled when not using ragdoll
-        public Collider[] colliderToEnable;
-
-// rigidbody that is  activated when not using ragdoll
-   
-
-// all colliders that are activated when using ragdoll
-        Collider[] allCollider;
-
-// all the rigidbodies used by ragdoll
-        private List<Rigidbody> ragdollRigidBodies = new List<Rigidbody>();
 
         private void Init()
         {
