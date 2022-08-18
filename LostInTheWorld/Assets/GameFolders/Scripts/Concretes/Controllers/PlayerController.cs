@@ -27,6 +27,7 @@ namespace LostInTheWorld.Controllers
         Collider[] allCollider;
         // all the rigidbodies used by ragdoll
         private List<Rigidbody> ragdollRigidBodies = new List<Rigidbody>();
+        public Joystick _joystick;
 
         bool _canRobotMove;
         bool _isRobotUp;
