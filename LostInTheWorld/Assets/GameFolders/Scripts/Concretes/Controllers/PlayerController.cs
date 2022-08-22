@@ -15,7 +15,6 @@ namespace LostInTheWorld.Controllers
         [SerializeField] float _force = 55f;
         [SerializeField] Transform _minXy, _maxXy;
         
-        
 
         Mover _mover; //Mover class'ımıza eriştik.
         DefaultInput _input; //Input System'a eriştik.
@@ -27,7 +26,8 @@ namespace LostInTheWorld.Controllers
         Collider[] allCollider;
         // all the rigidbodies used by ragdoll
         private List<Rigidbody> ragdollRigidBodies = new List<Rigidbody>();
-        public Joystick _joystick;
+        
+        
 
         bool _canRobotMove;
         bool _isRobotUp;
