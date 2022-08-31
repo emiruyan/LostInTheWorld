@@ -178,8 +178,6 @@ MonoBehaviour:
   _animationController: {fileID: 1554693365}
   _turnSpeed: 35
   _force: 55
-  _minXy: {fileID: 0}
-  _maxXy: {fileID: 0}
   colliderToEnable:
   - {fileID: 5043848911919804293}
 --- !u!114 &1040548962
@@ -194,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc898bf78e34cc4c9577d7ed9ebe65e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxFire: 100
+  _maxFire: 200
   _currentFire: 0
   _fireParticle: {fileID: 824966909906241120}
 --- !u!95 &1554693360
