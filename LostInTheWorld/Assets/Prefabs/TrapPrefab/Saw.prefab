@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5220043985695879763}
   - component: {fileID: -6090933155169635930}
   - component: {fileID: 3316318740594242248}
+  - component: {fileID: 4928452906968548338}
   m_Layer: 0
   m_Name: Saw
   m_TagString: Untagged
@@ -111,3 +112,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1504137610994509186, guid: d81d47b5e1db1c647ad3014e7bd6eff9, type: 3}
+--- !u!114 &4928452906968548338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76241215833601223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c1442c0730b25e479d23f71b389ece6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

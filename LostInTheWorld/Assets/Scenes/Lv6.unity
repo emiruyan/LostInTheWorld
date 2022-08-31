@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5359391948343592019, guid: 5664a42861d2a6d48b41eafc5ea97998, type: 3}
       propertyPath: _direction.y
-      value: 5
+      value: 5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5664a42861d2a6d48b41eafc5ea97998, type: 3}
@@ -735,10 +735,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1588229900}
-  - {fileID: 1649968511}
   - {fileID: 1153674100}
   - {fileID: 991159517}
+  - {fileID: 1588229900}
+  - {fileID: 1649968511}
   - {fileID: 635067322}
   - {fileID: 1045645038}
   m_Father: {fileID: 0}
@@ -786,7 +786,7 @@ Transform:
   - {fileID: 451979612}
   - {fileID: 2032825364}
   m_Father: {fileID: 745545674}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1045645037
 GameObject:
@@ -854,7 +854,7 @@ Transform:
   - {fileID: 1972276986}
   - {fileID: 711962170}
   m_Father: {fileID: 745545674}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1389243927
 PrefabInstance:
