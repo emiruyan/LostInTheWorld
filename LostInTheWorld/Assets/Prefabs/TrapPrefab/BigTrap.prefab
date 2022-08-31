@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5506228346578729683}
   - component: {fileID: 851536132295795945}
   - component: {fileID: 3305634336616938834}
+  - component: {fileID: 2019058191432531132}
+  - component: {fileID: 7434564602780917912}
   m_Layer: 0
   m_Name: BigTrap
   m_TagString: Untagged
@@ -83,3 +85,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2019058191432531132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619974038740985326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f42d5ee7502334d93a1e2eb216492e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &7434564602780917912
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619974038740985326}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 40.9449, y: 466.84, z: 64.95202}
+  m_Center: {x: 2.0541584, y: -3.2659245, z: 0}
