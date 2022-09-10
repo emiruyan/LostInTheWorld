@@ -29,12 +29,13 @@ Transform:
   m_GameObject: {fileID: 116326}
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.79, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 399900306041635479}
   - {fileID: 3470239951518942079}
   - {fileID: 3100355230226743748}
+  - {fileID: 1092829821}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
@@ -96,11 +97,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116326}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5313249, y: 2.494579, z: 0.275723}
-  m_Center: {x: 0, y: 0.0026243331, z: 0.1373108}
+  m_Size: {x: 2.5313249, y: 2.4945788, z: 2.043659}
+  m_Center: {x: 0, y: 0.0026243397, z: 1.0212834}
 --- !u!114 &1296710559977103830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +114,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b68c01d69d6b0d4ca1bd17d357250a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _finishParticleEffect: {fileID: 3100355230226743355}
+  targetPlayer: {fileID: 1092829821}
+--- !u!1 &1092829820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1092829821}
+  m_Layer: 0
+  m_Name: PlayerTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1092829821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092829820}
+  m_LocalRotation: {x: 0.7071067, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0, z: 0.275}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 424192}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &96566191590719976
 GameObject:
   m_ObjectHideFlags: 0
@@ -29292,7 +29326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3100355230226743748
 Transform:
   m_ObjectHideFlags: 0

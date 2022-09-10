@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using LostInTheWorld.Animations;
 using LostInTheWorld.Managers;
 using LostInTheWorld.Movements;
@@ -13,11 +14,10 @@ namespace LostInTheWorld.Controllers
         [SerializeField] AnimationController _animationController;
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] float _force = 55f;
-       // [SerializeField] Transform _minXy, _maxXy;
+       
         
 
         Mover _mover; //Mover class'ımıza eriştik.
-        DefaultInput _input; //Input System'a eriştik.
         Rotator _rotator;
         FireParticleEffect _fireParticleEffect;
         // colliders that needs to be enabled when not using ragdoll
@@ -31,16 +31,17 @@ namespace LostInTheWorld.Controllers
 
         bool _canRobotMove;
         bool _isRobotUp;
-        float _robotRotator;    
+        float _robotRotator;
 
 
+        public Joystick joystick;
         public float TurnSpeed => _turnSpeed;
         public float Force => _force;
         public bool CanRobotMove => _canRobotMove;
+        public float maxMinZRotation;
 
         private void Awake() //Component'lar ve cashlemeler
         {
-            _input = new DefaultInput();
             _mover = new Mover(this);
             _rotator = new Rotator(this);
             _fireParticleEffect = GetComponent<FireParticleEffect>();
@@ -51,7 +52,7 @@ namespace LostInTheWorld.Controllers
         private void Start()
         {
             _canRobotMove = true;
-          
+            joystick = CanvasManager.Instance.joystick;
         }
 
         private void OnEnable() //Etkinleştirildiğinde
@@ -71,7 +72,7 @@ namespace LostInTheWorld.Controllers
                 return;
             }
 
-            if (_input.IsRobotUp &&
+            if (joystick.Vertical>0  &&
                 !_fireParticleEffect.IsEmpty) //Robotumuz kalkışa geçtiğinde ve fireParticle boş olduğunda.
             {
                 _isRobotUp = true;
@@ -83,12 +84,12 @@ namespace LostInTheWorld.Controllers
                 _fireParticleEffect.FireIncrease(0.01f); //Fire artışı
             }
 
-            _robotRotator = _input.RobotRotator;
+            _robotRotator =joystick.Horizontal;
         }
-
-
+         
         private void FixedUpdate() //Fixed Update'de fizik işlemlerimizi yapacağız.
         {
+            _rotator.FixedTick(_robotRotator);
             if (!_canRobotMove || _mover.rigidbody.isKinematic)
             {
                 return;
@@ -100,9 +101,7 @@ namespace LostInTheWorld.Controllers
                 _fireParticleEffect.FireDecrease(0.2f); //Fire düşüşü
             }
 
-            _rotator.FixedTick(_robotRotator);
-
-            //PlayerBoundaries();
+           
         }
 
         private void HandleOnEventTriggered() //Tetiklenecek yapılar
@@ -113,14 +112,10 @@ namespace LostInTheWorld.Controllers
             _fireParticleEffect.FireIncrease(0f); //Player öldüyse FireParticleEffect çalışmayacak.
         }
 
-        // void PlayerBoundaries()
-        // {
-        //     transform.position = new Vector3(Mathf.Clamp(transform.position.x, _minXy.position.x, _maxXy.position.x),
-        //         Mathf.Clamp(transform.position.y, _minXy.position.y, _maxXy.position.y), 0);
-        // }
-
-        public void PlayerOnFinishFloor()
+        public void PlayerOnFinishFloor(Transform target)
         {
+            transform.DOMove(target.position, 2f).SetEase(Ease.Linear);
+            transform.DORotate(target.eulerAngles, 2f).SetEase(Ease.Linear);
             _mover.rigidbody.isKinematic = true; //Player Finish Floor üzerine geldiğinde bütün hareketini durduruyoruz.
         }
 
@@ -163,7 +158,11 @@ namespace LostInTheWorld.Controllers
 
             GetComponent<Rigidbody>().useGravity = !enableRagdoll;
         }
-        
+
+        public void PlayerFinish()
+        {
+            
+        }
     }
 }
 

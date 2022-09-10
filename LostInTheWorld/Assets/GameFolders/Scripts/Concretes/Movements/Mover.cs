@@ -25,7 +25,11 @@ namespace LostInTheWorld.Movements
         {
             //AddForce Standart x,y,z ' ye göre force gönderiyor.
             //RelativeForce pozisyonumuza göre force gönderiyor.
-            _rigidbody.AddRelativeForce(Vector3.up * Time.deltaTime * _playerController.Force);
+            if (_playerController.joystick.Vertical>0)
+            {
+                _rigidbody.AddRelativeForce((Vector3.up )* Time.deltaTime * _playerController.Force);
+            }
+           
         }
     }
     
