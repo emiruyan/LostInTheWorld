@@ -39,10 +39,15 @@ namespace LostInTheWorld.Managers
         
         private IEnumerator LoadLevelSceneAsync(int levelIndex)//Arka planda Coroutine method çalışmaya devam edecek
         {
-            //Menüden oyuna gidiyorsa
-            SoundManager.Instance.StopSound(0);
-            yield return SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + levelIndex);
-            SoundManager.Instance.PlaySound(1);
+            int sceneIndex = SceneManager.GetActiveScene().buildIndex + levelIndex;
+            if (sceneIndex > 9)
+            {
+                sceneIndex = 1;
+            }
+            // Menüden oyuna gidiyorsa
+             SoundManager.Instance.StopSound(0);
+             yield return SceneManager.LoadSceneAsync(sceneIndex);
+             SoundManager.Instance.PlaySound(1);
         }
         
         public void LoadMenuScene()//Player öldüğünde Menü'ye geçiş işlemleri
@@ -56,11 +61,13 @@ namespace LostInTheWorld.Managers
             yield return SceneManager.LoadSceneAsync("Menu");
             SoundManager.Instance.PlaySound(0);
             ;       }
-        
+
         public void Exit()
         {
             Application.Quit();
         }
+
+       
     }
 }
 

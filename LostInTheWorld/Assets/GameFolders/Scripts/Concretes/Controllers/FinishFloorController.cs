@@ -46,6 +46,7 @@ namespace LostInTheWorld.Controllers
                 GameManager.Instance.LevelSuccessful();//Event  
                 player.PlayerOnFinishFloor(targetPlayer);
             }
+            
         }
     }
 

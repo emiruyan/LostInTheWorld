@@ -7,21 +7,21 @@
             "actions": [
                 {
                     "name": "RobotUp",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "e0168cc2-9175-4f47-9d36-a14ab2775a47",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "RobotRotator",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "ff8eddd5-1a25-445e-85d7-547c70692310",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press(behavior=2)",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -39,7 +39,7 @@
                 {
                     "name": "AD",
                     "id": "461ec02c-754a-4afc-b688-79739e0839d0",
-                    "path": "1DAxis",
+                    "path": "ButtonWithTwoModifiers",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -48,7 +48,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
+                    "name": "Modifier 1",
                     "id": "de0aab8b-2a65-4ddc-9a13-8c914de41121",
                     "path": "<Keyboard>/a",
                     "interactions": "",
@@ -59,9 +59,20 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "positive",
+                    "name": "Modifier 2",
                     "id": "07e33667-79e2-4943-868f-9d31bad081ba",
                     "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RobotRotator",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Button",
+                    "id": "931c432a-5a88-4ab6-98a9-d0f1708d44d6",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

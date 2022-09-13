@@ -32,8 +32,6 @@ namespace LostInTheWorld.Controllers
                     Destroy(other.gameObject);//Diğer nesneyi yok et.
                 }
             }
-            
-            
         }
     }
 
