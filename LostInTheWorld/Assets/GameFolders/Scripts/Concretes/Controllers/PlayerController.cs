@@ -14,6 +14,7 @@ namespace LostInTheWorld.Controllers
         [SerializeField] AnimationController _animationController;
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] float _force = 55f;
+        public CoinController coinController;
        
         
 

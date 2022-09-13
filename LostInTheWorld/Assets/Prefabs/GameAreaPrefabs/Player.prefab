@@ -181,7 +181,7 @@ MonoBehaviour:
   colliderToEnable:
   - {fileID: 5043848911919804293}
   joystick: {fileID: 0}
-  maxMinZRotation: 0.35
+  maxMinZRotation: 0.45
 --- !u!114 &1040548962
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2578,6 +2578,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1554884731, guid: c4934f02df4b7c740a04a8c75b66e13b, type: 3}
+      propertyPath: m_Name
+      value: HighScoreText
+      objectReference: {fileID: 0}
     - target: {fileID: 464741407306149660, guid: c4934f02df4b7c740a04a8c75b66e13b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2789,10 +2793,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 947646448, guid: 53c7e9832740270409d1b87be5bd6824, type: 3}
-      propertyPath: _textCoins
-      value: 
-      objectReference: {fileID: 1797471104814587718}
-    - target: {fileID: 1320274793, guid: 53c7e9832740270409d1b87be5bd6824, type: 3}
       propertyPath: _textCoins
       value: 
       objectReference: {fileID: 1797471104814587718}

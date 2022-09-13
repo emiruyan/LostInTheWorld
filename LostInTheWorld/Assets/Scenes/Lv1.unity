@@ -655,26 +655,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 214778355, guid: c4934f02df4b7c740a04a8c75b66e13b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 255832523, guid: c4934f02df4b7c740a04a8c75b66e13b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 282331616, guid: c4934f02df4b7c740a04a8c75b66e13b, type: 3}
-      propertyPath: m_Name
-      value: NextLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 1377032767, guid: c4934f02df4b7c740a04a8c75b66e13b, type: 3}
-      propertyPath: m_Name
-      value: HighScore
-      objectReference: {fileID: 0}
-    - target: {fileID: 1554884733, guid: c4934f02df4b7c740a04a8c75b66e13b, type: 3}
-      propertyPath: m_Text
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 464741407306149660, guid: c4934f02df4b7c740a04a8c75b66e13b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -957,21 +937,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1320274793, guid: 53c7e9832740270409d1b87be5bd6824, type: 3}
+    - target: {fileID: 947646448, guid: 53c7e9832740270409d1b87be5bd6824, type: 3}
       propertyPath: _textCoins
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 992546240026361376, guid: 53c7e9832740270409d1b87be5bd6824, type: 3}
-      propertyPath: _force
-      value: 75
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1532217260}
     - target: {fileID: 992546240026361376, guid: 53c7e9832740270409d1b87be5bd6824, type: 3}
       propertyPath: _turnSpeed
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 992546240026361376, guid: 53c7e9832740270409d1b87be5bd6824, type: 3}
-      propertyPath: maxMinZRotation
-      value: 0.45
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3910711992709820120, guid: 53c7e9832740270409d1b87be5bd6824, type: 3}
       propertyPath: m_Name

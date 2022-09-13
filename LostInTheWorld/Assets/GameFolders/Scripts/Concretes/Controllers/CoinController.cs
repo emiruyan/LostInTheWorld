@@ -9,18 +9,16 @@ using UnityEngine.UI;
 
 namespace LostInTheWorld.Controllers
 {
-    public class CoinController : MonoBehaviour
+    public class CoinController : SingletonThisObject<CoinController>
     {
-        private int coin = 0;
-        public Text _textCoins; 
+        public int  coin;
+        public Text _textCoins;
+        
 
-
-        private void Update()
+        private void Awake()
         {
-            if (coin > PlayerPrefs.GetInt("_highScore"))
-            {
-                PlayerPrefs.SetInt("_highScore", coin);
-            }
+            SingletonThisGameObject(this);
+            _textCoins.text = PlayerPrefs.GetInt("Coin", 0).ToString();
         }
 
         private void OnTriggerEnter(Collider other) 
@@ -29,10 +27,13 @@ namespace LostInTheWorld.Controllers
                 if (other.transform.tag == "Coin")//Eğer Tetiklenen yapılardan birinin Tag'ı "Coin" ise;
                 {
                     coin++; //UI'da Coini bir bir arttır.
-                    _textCoins.text = coin.ToString(); 
+                    int currentNumber = PlayerPrefs.GetInt("Coin", 0) + coin;
+                    _textCoins.text = currentNumber.ToString(); 
                     Destroy(other.gameObject);//Diğer nesneyi yok et.
                 }
             }
+            
+            
         }
     }
 
