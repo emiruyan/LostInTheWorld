@@ -12,8 +12,7 @@ namespace  LostInTheWorld.Controllers
         [SerializeField] Vector3 _direction;//yön atadık
         [SerializeField] float _factor; // Çarpanımızı burada _factor olarak atadık
         [SerializeField] float _speed = 1f; //Hız atadık
-       // [Range(0f, 1f)] //0f ile 1f arasında bir sınır belirledik
-        
+       
         
         Vector3 _startPosition; //Başlangıç pozisyonumuzu default olarak verdik
         private const float FULL_CIRCLE = Mathf.PI * 2f;//Const'a burada değer atadığımızda bunu bir daha değiştiremeyiz.

@@ -59,7 +59,7 @@ namespace LostInTheWorld.Controllers
         {
             GameManager.Instance.OnGameOver += HandleOnEventTriggered;
         }
-
+        
         private void OnDisable() //Devre Dışı bırakıldığında
         {
             GameManager.Instance.OnGameOver -= HandleOnEventTriggered;
@@ -84,7 +84,7 @@ namespace LostInTheWorld.Controllers
                 _fireParticleEffect.FireIncrease(0.01f); //Fire artışı
             }
 
-            _robotRotator =joystick.Horizontal;
+            _robotRotator = joystick.Horizontal;
         }
          
         private void FixedUpdate() //Fixed Update'de fizik işlemlerimizi yapacağız.
@@ -158,11 +158,7 @@ namespace LostInTheWorld.Controllers
 
             GetComponent<Rigidbody>().useGravity = !enableRagdoll;
         }
-
-        public void PlayerFinish()
-        {
-            
-        }
+        
     }
 }
 

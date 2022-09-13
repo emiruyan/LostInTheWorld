@@ -11,7 +11,7 @@ namespace LostInTheWorld.Uis
         {
             GameManager.Instance.LoadLevelScene(1);
         }
-
+        
         public void ExitClick()
         {
             GameManager.Instance.Exit();      

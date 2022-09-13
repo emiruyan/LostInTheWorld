@@ -11,7 +11,7 @@ namespace LostInTheWorld.Uis
         {
             GameManager.Instance.LoadLevelScene(); //Aynı bölümü oynayacağımız için index yazmadık.
         }
-
+        
         public void MainMenuButton()
         {
             GameManager.Instance.LoadMenuScene(); //Coroutine

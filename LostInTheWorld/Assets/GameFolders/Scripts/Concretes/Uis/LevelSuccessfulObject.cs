@@ -4,15 +4,22 @@ using System.Collections.Generic;
 using LostInTheWorld.Managers;
 using LostInTheWorld.Movements;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace LostInTheWorld.Uis
 {
     public class LevelSuccessfulObject : MonoBehaviour
     {
         [SerializeField] GameObject _levelSuccesfulPanel;
+        [SerializeField] private Text _highScore;
 
         Mover _mover;
-        
+
+        private void Start()
+        {
+            _highScore.text = PlayerPrefs.GetInt("_highScore").ToString();
+        }
+
         private void Awake()
         {
             if (_levelSuccesfulPanel.activeSelf) //Level Succesful Panel Açık(True) ise bunu 
@@ -25,7 +32,7 @@ namespace LostInTheWorld.Uis
         {
             GameManager.Instance.OnLevelSuccessful += HandleOnLevelSuccesful;
         }
-
+        
         private void OnDisable()
         {
             GameManager.Instance.OnLevelSuccessful -= HandleOnLevelSuccesful;

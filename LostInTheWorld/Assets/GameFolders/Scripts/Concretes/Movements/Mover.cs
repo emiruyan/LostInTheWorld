@@ -9,6 +9,7 @@ namespace LostInTheWorld.Movements
     public class Mover: MonoBehaviour //Her classın kendi görevi olması için Player'ın hareket işlemlerini mover adlı classa taşıdık.
     {
         Rigidbody _rigidbody;
+        [SerializeField] private float upForce = 5f;
 
         public Rigidbody rigidbody => _rigidbody;
         PlayerController _playerController;

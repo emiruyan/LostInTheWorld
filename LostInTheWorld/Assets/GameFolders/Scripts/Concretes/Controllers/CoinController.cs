@@ -4,23 +4,21 @@ using System.Collections.Generic;
 using LostInTheWorld.Utilities;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace LostInTheWorld.Controllers
 {
     public class CoinController : MonoBehaviour
     {
-        private float coin = 0f;//Float tipinde coin değişkeni atadık.
-        public TextMeshProUGUI _textCoins; //UI'da TMP kullanmak için bu değişkeni oluşturduk. 
+        private int coin = 0;//Float tipinde coin değişkeni atadık.
+        public Text _textCoins; //UI'da TMP kullanmak için bu değişkeni oluşturduk. 
         
         private void OnTriggerEnter(Collider other) 
         {
-            if (other.transform.tag == "Coin")//Eğer Tetiklenen yapılardan birinin Tag'ı "Coin" ise;
-            {
-                 coin++; //UI'da Coini bir bir arttır.
-                _textCoins.text = coin.ToString(); 
-                Destroy(other.gameObject);//Diğer nesneyi yok et.
-            }
+           
         }
+
+       
     }
 
 }
