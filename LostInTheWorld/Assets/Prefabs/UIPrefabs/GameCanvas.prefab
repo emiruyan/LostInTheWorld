@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d196a1ce79ff3e42828d0f78b8f516b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _highScore: {fileID: 1554884733}
 --- !u!1 &282331616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2619,7 +2620,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelSuccesfulPanel: {fileID: 255832523}
-  _highScore: {fileID: 1554884733}
 --- !u!1 &2604106393226467347
 GameObject:
   m_ObjectHideFlags: 0

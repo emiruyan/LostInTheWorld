@@ -2037,6 +2037,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 947646448, guid: 53c7e9832740270409d1b87be5bd6824, type: 3}
+      propertyPath: _textCoins
+      value: 
+      objectReference: {fileID: 1797471104814587718}
     - target: {fileID: 1320274793, guid: 53c7e9832740270409d1b87be5bd6824, type: 3}
       propertyPath: _textCoins
       value: 

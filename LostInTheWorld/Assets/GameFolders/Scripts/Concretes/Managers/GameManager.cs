@@ -12,10 +12,6 @@ namespace LostInTheWorld.Managers
     //Bu class'ta Singleton Design Pattern'den yararlanacağız. Game Manager'ın tekrar tekrar oluşmasını istemiyoruz. Tekil bir yapı istiyoruz.
     public class GameManager : SingletonThisObject<GameManager>
     {
-        
-        private int coin = 0;//Float tipinde coin değişkeni atadık.
-        public Text _textCoins; //UI'da TMP kullanmak için bu değişkeni oluşturduk. 
-        
         public event Action OnGameOver; //Oyun bittiğinde, öldüğümüzde tetiklenecek bir event oluşturduk.
         public event Action OnLevelSuccessful; //Leveli başarı ile tamamladığımızda tetiklenecek eventi oluşturduk.
         
@@ -64,16 +60,6 @@ namespace LostInTheWorld.Managers
         public void Exit()
         {
             Application.Quit();
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.transform.tag == "Player")//Eğer Tetiklenen yapılardan birinin Tag'ı "Coin" ise;
-            {
-                coin++; //UI'da Coini bir bir arttır.
-                _textCoins.text = coin.ToString(); 
-                Destroy(this.gameObject);//Diğer nesneyi yok et.
-            }
         }
     }
 }
