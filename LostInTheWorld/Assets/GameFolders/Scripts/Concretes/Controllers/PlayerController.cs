@@ -165,7 +165,7 @@ namespace LostInTheWorld.Controllers
                 item.enabled = !enableRagdoll; // flip the normal colliders active state
             }
 
-            GetComponent<Rigidbody>().useGravity = false;
+            GetComponent<Rigidbody>().useGravity = !enableRagdoll;
         }
         
     }
