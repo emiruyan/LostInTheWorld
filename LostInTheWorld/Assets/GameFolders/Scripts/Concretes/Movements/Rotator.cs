@@ -19,28 +19,37 @@ namespace LostInTheWorld.Movements
 
 
         private Quaternion rotation;
-        public void FixedTick(float direction)
+        public void FixedTick(Joystick joystick)
         {
             if (_rigidbody.isKinematic)return;
-            _playerController.transform.Rotate(Vector3.back * Time.deltaTime * direction * _playerController.TurnSpeed);
-            rotation = _playerController.transform.rotation;
-            rotation.z = Mathf.Clamp(rotation.z, -_playerController.maxMinZRotation, _playerController.maxMinZRotation);
-            _playerController.transform.rotation = rotation;
-            if (direction == 0)
+            if (joystick.Direction!=Vector2.zero)
             {
-                if (_rigidbody.freezeRotation)
-                {
-                    //_rigidbody.freezeRotation = false;
-                }
-                return;
+               _playerController.transform.up = Vector3.Lerp(_playerController.transform.up,joystick.Direction,20f*Time.deltaTime);
+            }
+            else
+            {
+                _playerController.transform.rotation = Quaternion.Lerp(_playerController.transform.rotation,Quaternion.Euler(Vector3.zero),15f*Time.deltaTime);
             }
             
-            if (!_rigidbody.freezeRotation)
-            {
-              //  _rigidbody.freezeRotation = false;
-            }
-            
-            
+            // _playerController.transform.Rotate(Vector3.back * Time.deltaTime * direction * _playerController.TurnSpeed);
+            // rotation = _playerController.transform.rotation;
+            // rotation.z = Mathf.Clamp(rotation.z, -_playerController.maxMinZRotation, _playerController.maxMinZRotation);
+            // _playerController.transform.rotation = rotation;
+            // if (direction == 0)
+            // {
+            //     if (_rigidbody.freezeRotation)
+            //     {
+            //         //_rigidbody.freezeRotation = false;
+            //     }
+            //     return;
+            // }
+            //
+            // if (!_rigidbody.freezeRotation)
+            // {
+            //   //  _rigidbody.freezeRotation = false;
+            // }
+
+
 
 
 

@@ -15,8 +15,8 @@ namespace LostInTheWorld.Controllers
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] float _force = 55f;
         public CoinController coinController;
-       
-        
+
+        public float clampMaxVelocity;
 
         Mover _mover; //Mover class'ımıza eriştik.
         Rotator _rotator;
@@ -32,7 +32,7 @@ namespace LostInTheWorld.Controllers
 
         bool _canRobotMove;
         bool _isRobotUp;
-        float _robotRotator;
+        //float _robotRotator;
 
 
         public Joystick joystick;
@@ -68,39 +68,46 @@ namespace LostInTheWorld.Controllers
 
         private void Update() //Input'umuzu Update'den alıyoruz.
         {
-            if (!_canRobotMove) //Player hareket edemiyorsa return et.
+            if (joystick.Direction!=Vector2.zero)
             {
-                return;
-            }
-
-            if (joystick.Vertical>0  &&
-                !_fireParticleEffect.IsEmpty) //Robotumuz kalkışa geçtiğinde ve fireParticle boş olduğunda.
-            {
-                _isRobotUp = true;
                 _animationController.FlyIncrease(true);
             }
             else
             {
-                _isRobotUp = false;
-                _fireParticleEffect.FireIncrease(0.01f); //Fire artışı
+                _animationController.FlyIncrease(false);
             }
+            // if (!_canRobotMove) //Player hareket edemiyorsa return et.
+            // {
+            //     return;
+            // }
+            //
+            // if (joystick.Vertical>0  &&
+            //     !_fireParticleEffect.IsEmpty) //Robotumuz kalkışa geçtiğinde ve fireParticle boş olduğunda.
+            // {
+            //     _isRobotUp = true;
+            //     
+            // }
+            // else
+            // {
+            //     _isRobotUp = false;
+            //     _fireParticleEffect.FireIncrease(0.01f); //Fire artışı
+            // }
 
-            _robotRotator = joystick.Horizontal;
+         //   _robotRotator = joystick;
         }
          
         private void FixedUpdate() //Fixed Update'de fizik işlemlerimizi yapacağız.
         {
-            _rotator.FixedTick(_robotRotator);
+            _rotator.FixedTick(joystick);
+            _mover.FixedTick();
             if (!_canRobotMove || _mover.rigidbody.isKinematic)
             {
                 return;
             }
 
-            if (_isRobotUp)
-            {
-                _mover.FixedTick();
-                _fireParticleEffect.FireDecrease(0.2f); //Fire düşüşü
-            }
+
+            _fireParticleEffect.FireDecrease(0.2f); //Fire düşüşü
+            
 
            
         }
@@ -109,7 +116,7 @@ namespace LostInTheWorld.Controllers
         {
             _canRobotMove = false; //Player öldüyse hareket edemeyecek
             _isRobotUp = false; //Player öldüyse Yukarı güç uygulayamayacak.
-            _robotRotator = 0f; //Player öldüyse sağa sola hareket edemeyecek.
+            //_robotRotator = 0f; //Player öldüyse sağa sola hareket edemeyecek.
             _fireParticleEffect.FireIncrease(0f); //Player öldüyse FireParticleEffect çalışmayacak.
         }
 
@@ -143,6 +150,7 @@ namespace LostInTheWorld.Controllers
             }
         }
         public void EnableRagdoll(bool enableRagdoll) {
+            GetComponent<Rigidbody>().isKinematic = enableRagdoll;
             GetComponent<Animator>().enabled = !enableRagdoll;
             foreach(Collider item in allCollider) {
                 item.enabled = enableRagdoll; // enable all colliders  if ragdoll is set to enabled
@@ -157,7 +165,7 @@ namespace LostInTheWorld.Controllers
                 item.enabled = !enableRagdoll; // flip the normal colliders active state
             }
 
-            GetComponent<Rigidbody>().useGravity = !enableRagdoll;
+            GetComponent<Rigidbody>().useGravity = false;
         }
         
     }
