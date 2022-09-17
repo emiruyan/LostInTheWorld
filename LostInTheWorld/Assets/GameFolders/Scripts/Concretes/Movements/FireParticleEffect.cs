@@ -8,16 +8,18 @@ namespace LostInTheWorld.Movements
 {
     public class FireParticleEffect : MonoBehaviour
     {
-        [SerializeField] float _maxFire = 100f;
+        private float _maxFire = 100f;
         [SerializeField] float _currentFire;
         [SerializeField] ParticleSystem _fireParticle;
 
         public bool IsEmpty => _currentFire < 1f;  //Current fire 1f'den küçük yakıtımız boştur.
 
         public float CurrentFire => _currentFire / _maxFire; 
+        
 
-        private void Awake()
+        public void SetMaxFire(float value)
         {
+            _maxFire = value;
             _currentFire = _maxFire;
         }
 

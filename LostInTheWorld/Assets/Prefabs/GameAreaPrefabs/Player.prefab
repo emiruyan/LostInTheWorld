@@ -1374,12 +1374,13 @@ MonoBehaviour:
   _animationController: {fileID: 1554693365}
   _turnSpeed: 150
   _force: 75
-  coinController: {fileID: 0}
+  coinController: {fileID: 947646448}
   clampMaxVelocity: 8
+  _fireParticleEffect: {fileID: 0}
   colliderToEnable:
   - {fileID: 5043848911919804293}
   joystick: {fileID: 0}
-  maxMinZRotation: 0.45
+  rotationSpeed: 5
 --- !u!114 &1040548962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1392,7 +1393,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc898bf78e34cc4c9577d7ed9ebe65e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxFire: 200
   _currentFire: 0
   _fireParticle: {fileID: 824966909906241120}
 --- !u!95 &1554693360

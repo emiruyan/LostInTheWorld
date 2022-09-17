@@ -20,7 +20,7 @@ namespace LostInTheWorld.Controllers
 
         Mover _mover; //Mover class'ımıza eriştik.
         Rotator _rotator;
-        FireParticleEffect _fireParticleEffect;
+        [HideInInspector] public FireParticleEffect _fireParticleEffect;//Hide in ispector 
         // colliders that needs to be enabled when not using ragdoll
         public Collider[] colliderToEnable;
         // all colliders that are activated when using ragdoll
@@ -39,7 +39,7 @@ namespace LostInTheWorld.Controllers
         public float TurnSpeed => _turnSpeed;
         public float Force => _force;
         public bool CanRobotMove => _canRobotMove;
-        public float maxMinZRotation;
+        public float rotationSpeed;
 
         private void Awake() //Component'lar ve cashlemeler
         {
@@ -68,13 +68,19 @@ namespace LostInTheWorld.Controllers
 
         private void Update() //Input'umuzu Update'den alıyoruz.
         {
+            if (_fireParticleEffect.IsEmpty)
+            {
+                return;
+            }
             if (joystick.Direction!=Vector2.zero)
             {
                 _animationController.FlyIncrease(true);
+                _fireParticleEffect.FireDecrease(0.2f);
             }
             else
             {
                 _animationController.FlyIncrease(false);
+                _fireParticleEffect.FireIncrease(0.2f);
             }
             // if (!_canRobotMove) //Player hareket edemiyorsa return et.
             // {
@@ -95,18 +101,28 @@ namespace LostInTheWorld.Controllers
 
          //   _robotRotator = joystick;
         }
-         
+
+        private bool playerDead;
         private void FixedUpdate() //Fixed Update'de fizik işlemlerimizi yapacağız.
         {
-            _rotator.FixedTick(joystick);
-            _mover.FixedTick();
             if (!_canRobotMove || _mover.rigidbody.isKinematic)
             {
                 return;
             }
+            if (_fireParticleEffect.IsEmpty)
+            {
+                PlayerDeath();
+                GameManager.Instance.GameOver();
+                _canRobotMove = false;
+                return;
+            }
+            
+            _rotator.FixedTick(joystick);
+            _mover.FixedTick();
+            
 
 
-            _fireParticleEffect.FireDecrease(0.2f); //Fire düşüşü
+            //Fire düşüşü
             
 
            

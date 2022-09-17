@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9017030371378942797}
   - component: {fileID: 9017030371378942796}
+  - component: {fileID: 5827436800006675664}
   m_Layer: 0
   m_Name: '[GameManager]'
   m_TagString: Untagged
@@ -44,4 +45,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f058048ed33eb8c49a46c869ca01cf16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textCoins: {fileID: 0}
+--- !u!114 &5827436800006675664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9017030371378942798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ca45598df49ab4bbdac8a57694a6c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 6896221522889520365, guid: 816c9580b51e4a441b7cc2d7064ff79a, type: 3}
+  - {fileID: 8491747522939885392, guid: c87a74d0dfbce1a4c962ef8f73ddf34c, type: 3}
+  - {fileID: -3828558546891456175, guid: fae05f141d294984586728d0921ecf5c, type: 3}
+  - {fileID: -4440165479023292321, guid: a8aa73f48fda8f546b3bb5392aca53e3, type: 3}
+  - {fileID: -5384813431176830858, guid: c46e4e5a6c942d645b398a0f410a5bc5, type: 3}
+  - {fileID: -4630789916653814506, guid: 248c716df0fa9ab42bc4ed68c7bcad47, type: 3}
+  - {fileID: -6012005964794625244, guid: 147b420474702a9498d5685a9fb297cf, type: 3}
+  - {fileID: 2325498907507491952, guid: 831f86360d3c56241a4f442addf59872, type: 3}
+  - {fileID: 1750084442170422825, guid: 3fbc9dc84d9793f449f9008c7f4eeafd, type: 3}
+  - {fileID: -6953893445998480393, guid: f7cb19b8201d7a843a6fae504d930ce5, type: 3}
+  currentLevel: {fileID: 0}

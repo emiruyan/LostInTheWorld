@@ -24,11 +24,11 @@ namespace LostInTheWorld.Movements
             if (_rigidbody.isKinematic)return;
             if (joystick.Direction!=Vector2.zero)
             {
-               _playerController.transform.up = Vector3.Lerp(_playerController.transform.up,joystick.Direction,20f*Time.deltaTime);
+               _playerController.transform.up = Vector3.Lerp(_playerController.transform.up,joystick.Direction,_playerController.rotationSpeed*Time.deltaTime);
             }
             else
             {
-                _playerController.transform.rotation = Quaternion.Lerp(_playerController.transform.rotation,Quaternion.Euler(Vector3.zero),15f*Time.deltaTime);
+                _playerController.transform.rotation = Quaternion.Lerp(_playerController.transform.rotation,Quaternion.Euler(Vector3.zero),_playerController.rotationSpeed*Time.deltaTime);
             }
             
             // _playerController.transform.Rotate(Vector3.back * Time.deltaTime * direction * _playerController.TurnSpeed);

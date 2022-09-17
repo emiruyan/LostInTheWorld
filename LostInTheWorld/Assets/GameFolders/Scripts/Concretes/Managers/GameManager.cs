@@ -14,6 +14,8 @@ namespace LostInTheWorld.Managers
     {
         public event Action OnGameOver; //Oyun bittiğinde, öldüğümüzde tetiklenecek bir event oluşturduk.
         public event Action OnLevelSuccessful; //Leveli başarı ile tamamladığımızda tetiklenecek eventi oluşturduk.
+        [SerializeField] private PlayerController _characterController;
+        public PlayerController Character => _characterController;
         
         private void Awake()
         {
@@ -39,28 +41,20 @@ namespace LostInTheWorld.Managers
         
         private IEnumerator LoadLevelSceneAsync(int levelIndex)//Arka planda Coroutine method çalışmaya devam edecek
         {
-            int sceneIndex = SceneManager.GetActiveScene().buildIndex + levelIndex;
-            if (sceneIndex > 9)
+            if (levelIndex != 0)
             {
-                sceneIndex = 1;
+                LevelManager.Instance.NextLevel();
             }
-            // Menüden oyuna gidiyorsa
-             SoundManager.Instance.StopSound(0);
-             yield return SceneManager.LoadSceneAsync(sceneIndex);
-             SoundManager.Instance.PlaySound(1);
+            yield return SceneManager.LoadSceneAsync("Game");
+             
         }
         
         public void LoadMenuScene()//Player öldüğünde Menü'ye geçiş işlemleri
         {
-            StartCoroutine(LoadMenuSceneAsync());//Menu işlemleri Coroutine Method üzerinden olacak.
+           
         }
         
-        private IEnumerator LoadMenuSceneAsync()
-        {
-            SoundManager.Instance.StopSound(1);
-            yield return SceneManager.LoadSceneAsync("Menu");
-            SoundManager.Instance.PlaySound(0);
-            ;       }
+      
 
         public void Exit()
         {

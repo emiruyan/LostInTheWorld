@@ -12,7 +12,7 @@ namespace LostInTheWorld.Controllers
     public class CoinController : SingletonThisObject<CoinController>
     {
         public int  coin;
-        public Text _textCoins;
+        public TextMeshProUGUI _textCoins;
         
 
         private void Awake()
