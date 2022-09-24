@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Lofelt.NiceVibrations;
 using LostInTheWorld.Utilities;
 using TMPro;
 using UnityEngine;
@@ -26,10 +27,13 @@ namespace LostInTheWorld.Controllers
             {
                 if (other.transform.tag == "Coin")//Eğer Tetiklenen yapılardan birinin Tag'ı "Coin" ise;
                 {
+                   
                     coin++; //UI'da Coini bir bir arttır.
                     int currentNumber = PlayerPrefs.GetInt("Coin", 0) + coin;
                     _textCoins.text = currentNumber.ToString(); 
+                    HapticPatterns.PlayPreset(HapticPatterns.PresetType.SoftImpact);
                     Destroy(other.gameObject);//Diğer nesneyi yok et.
+                    
                 }
             }
         }

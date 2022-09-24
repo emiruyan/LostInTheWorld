@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Lofelt.NiceVibrations;
 using LostInTheWorld.Animations;
 using LostInTheWorld.Managers;
 using LostInTheWorld.Movements;
@@ -66,6 +67,7 @@ namespace LostInTheWorld.Controllers
             GameManager.Instance.OnGameOver -= HandleOnEventTriggered;
         }
 
+        [SerializeField] private GameObject joystickTutorial;
         private void Update() //Input'umuzu Update'den alıyoruz.
         {
             if (_fireParticleEffect.IsEmpty)
@@ -76,6 +78,10 @@ namespace LostInTheWorld.Controllers
             {
                 _animationController.FlyIncrease(true);
                 _fireParticleEffect.FireDecrease(0.2f);
+                if (joystickTutorial.activeInHierarchy)
+                {
+                    joystickTutorial.gameObject.SetActive(false);
+                }
             }
             else
             {
@@ -138,6 +144,7 @@ namespace LostInTheWorld.Controllers
 
         public void PlayerOnFinishFloor(Transform target)
         {
+            HapticPatterns.PlayPreset(HapticPatterns.PresetType.Success);
             transform.DOMove(target.position, 2f).SetEase(Ease.Linear);
             transform.DORotate(target.eulerAngles, 2f).SetEase(Ease.Linear);
             _mover.rigidbody.isKinematic = true; //Player Finish Floor üzerine geldiğinde bütün hareketini durduruyoruz.
@@ -145,6 +152,7 @@ namespace LostInTheWorld.Controllers
 
         public void PlayerDeath()
         {
+            HapticPatterns.PlayPreset(HapticPatterns.PresetType.Failure);
             _animationController.PlayerDeath();
             EnableRagdoll(true);
         }

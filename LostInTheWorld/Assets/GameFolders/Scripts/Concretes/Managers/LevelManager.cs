@@ -12,6 +12,7 @@ public class LevelManager : SingletonThisObject<LevelManager>
     public List<Level> levels;
     public Level currentLevel;
     public const string LevelKey = "Level";
+    [SerializeField] private FinishIndicatorController finishIndicatorController;
     public const string LevelTextKey = "LevelText";
     [SerializeField] private TextMeshProUGUI levelText;
     private int level=0;
@@ -40,6 +41,10 @@ public class LevelManager : SingletonThisObject<LevelManager>
         else
         {
             currentLevel = Instantiate(levels[level], levels[level].transform.position, levels[level].transform.rotation);
+            if (currentLevel.levelFinishTransform!=null)
+            {
+                finishIndicatorController.target = currentLevel.levelFinishTransform;
+            }
             GameManager.Instance.Character._fireParticleEffect.SetMaxFire(currentLevel.maxFire);
         }
     }

@@ -5,4 +5,5 @@ using UnityEngine;
 public class Level : MonoBehaviour
 {
     public float maxFire;
+    public Transform levelFinishTransform;
 }

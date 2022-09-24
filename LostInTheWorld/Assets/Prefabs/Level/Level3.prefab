@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxFire: 400
+  levelFinishTransform: {fileID: 1768734271191247922}
 --- !u!1 &1768734271073924206
 GameObject:
   m_ObjectHideFlags: 0

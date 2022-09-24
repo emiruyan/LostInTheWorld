@@ -208,6 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxFire: 400
+  levelFinishTransform: {fileID: 5384340961588861459}
 --- !u!1001 &1938652925817003566
 PrefabInstance:
   m_ObjectHideFlags: 0
