@@ -641,8 +641,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4222185599944558939}
   - component: {fileID: 4313041410243431561}
-  - component: {fileID: 4218001287692656610}
   - component: {fileID: 4218001287692656621}
+  - component: {fileID: 1423043967333045081}
   m_Layer: 0
   m_Name: TurtleEnemy
   m_TagString: Untagged
@@ -687,19 +687,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &4218001287692656610
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4219617564969376651}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.95378786, y: 1.0292094, z: 1}
-  m_Center: {x: -0.35551384, y: 0.10500157, z: 0}
 --- !u!114 &4218001287692656621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,6 +702,19 @@ MonoBehaviour:
   _direction: {x: 0, y: 15, z: 0}
   _factor: 0
   _speed: 7
+--- !u!65 &1423043967333045081
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4219617564969376651}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.113674, y: 1.2081641, z: 1}
+  m_Center: {x: -0.4420467, y: -0.17797096, z: -0.5799999}
 --- !u!1 &4219621553860698247
 GameObject:
   m_ObjectHideFlags: 0

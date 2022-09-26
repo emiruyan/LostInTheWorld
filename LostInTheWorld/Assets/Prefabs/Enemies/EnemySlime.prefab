@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 3289216569701247109}
   - component: {fileID: 3240897146214055767}
   - component: {fileID: 5359391948343592019}
-  - component: {fileID: 809891743703051363}
+  - component: {fileID: 770419267266483414}
   m_Layer: 0
   m_Name: EnemySlime
   m_TagString: Untagged
@@ -167,7 +167,7 @@ MonoBehaviour:
   _direction: {x: 0, y: 15, z: 0}
   _factor: 0
   _speed: 7
---- !u!65 &809891743703051363
+--- !u!65 &770419267266483414
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,8 +178,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.584081, y: 1.4004122, z: 1.481643}
-  m_Center: {x: -0.09192163, y: 0.63041943, z: -0.017557263}
+  m_Size: {x: 1, y: 1.234839, z: 1.3668995}
+  m_Center: {x: 0, y: 0.5974195, z: -0.015113076}
 --- !u!1 &3291533546856521423
 GameObject:
   m_ObjectHideFlags: 0
