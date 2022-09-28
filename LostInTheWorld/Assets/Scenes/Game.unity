@@ -311,6 +311,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8170153791961219459, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170153792821263252, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
 --- !u!1001 &87854035
@@ -818,6 +826,10 @@ PrefabInstance:
     - target: {fileID: 50637595769183905, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
       propertyPath: m_Name
       value: CFXR4 Spaceship Thruster (Purple)
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183905, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 50637595826365029, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
       propertyPath: m_Intensity
@@ -1363,6 +1375,87 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148396574}
   m_CullTransparentMesh: 1
+--- !u!1001 &1204188877
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3910711990987389365}
+    m_Modifications:
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0992
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0244
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.51937
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.85454947
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 117.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183903, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183905, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_Name
+      value: CFXR4 Spaceship Thruster (Purple) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595826365029, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_Intensity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674149620908402671, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
 --- !u!114 &1329740738 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 992546240026361376, guid: 53c7e9832740270409d1b87be5bd6824, type: 3}
