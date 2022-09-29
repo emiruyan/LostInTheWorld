@@ -21,17 +21,21 @@ namespace LostInTheWorld.Controllers
 
         Mover _mover; //Mover class'ımıza eriştik.
         Rotator _rotator;
-        [HideInInspector] public FireParticleEffect _fireParticleEffect;//Hide in ispector 
+
+        [HideInInspector] public FireParticleEffect _fireParticleEffect; //Hide in ispector 
+
         // colliders that needs to be enabled when not using ragdoll
         public Collider[] colliderToEnable;
+
         // all colliders that are activated when using ragdoll
         Collider[] allCollider;
+
         // all the rigidbodies used by ragdoll
         private List<Rigidbody> ragdollRigidBodies = new List<Rigidbody>();
-        
-        
+
 
         bool _canRobotMove;
+
         bool _isRobotUp;
         //float _robotRotator;
 
@@ -61,20 +65,22 @@ namespace LostInTheWorld.Controllers
         {
             GameManager.Instance.OnGameOver += HandleOnEventTriggered;
         }
-        
+
         private void OnDisable() //Devre Dışı bırakıldığında
         {
             GameManager.Instance.OnGameOver -= HandleOnEventTriggered;
         }
 
         [SerializeField] private GameObject joystickTutorial;
+
         private void Update() //Input'umuzu Update'den alıyoruz.
         {
             if (_fireParticleEffect.IsEmpty)
             {
                 return;
             }
-            if (joystick.Direction!=Vector2.zero)
+
+            if (joystick.Direction != Vector2.zero)
             {
                 _animationController.FlyIncrease(true);
                 _fireParticleEffect.FireDecrease(0.2f);
@@ -85,36 +91,26 @@ namespace LostInTheWorld.Controllers
             }
             else
             {
-                _animationController.FlyIncrease(false);
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.up), out hit,
+                        0.2f))
+                {
+                    _animationController.FlyIncrease(false);
+                }
+
                 _fireParticleEffect.FireIncrease(0.2f);
             }
-            // if (!_canRobotMove) //Player hareket edemiyorsa return et.
-            // {
-            //     return;
-            // }
-            //
-            // if (joystick.Vertical>0  &&
-            //     !_fireParticleEffect.IsEmpty) //Robotumuz kalkışa geçtiğinde ve fireParticle boş olduğunda.
-            // {
-            //     _isRobotUp = true;
-            //     
-            // }
-            // else
-            // {
-            //     _isRobotUp = false;
-            //     _fireParticleEffect.FireIncrease(0.01f); //Fire artışı
-            // }
-
-         //   _robotRotator = joystick;
         }
 
         private bool playerDead;
+
         private void FixedUpdate() //Fixed Update'de fizik işlemlerimizi yapacağız.
         {
             if (!_canRobotMove || _mover.rigidbody.isKinematic)
             {
                 return;
             }
+
             if (_fireParticleEffect.IsEmpty)
             {
                 PlayerDeath();
@@ -122,16 +118,12 @@ namespace LostInTheWorld.Controllers
                 _canRobotMove = false;
                 return;
             }
-            
+
             _rotator.FixedTick(joystick);
             _mover.FixedTick();
-            
 
 
             //Fire düşüşü
-            
-
-           
         }
 
         private void HandleOnEventTriggered() //Tetiklenecek yapılar
@@ -156,7 +148,7 @@ namespace LostInTheWorld.Controllers
             _animationController.PlayerDeath();
             EnableRagdoll(true);
         }
-        
+
 
         private void Init()
         {
@@ -173,25 +165,29 @@ namespace LostInTheWorld.Controllers
                 }
             }
         }
-        public void EnableRagdoll(bool enableRagdoll) {
+
+        public void EnableRagdoll(bool enableRagdoll)
+        {
             GetComponent<Rigidbody>().isKinematic = enableRagdoll;
             GetComponent<Animator>().enabled = !enableRagdoll;
-            foreach(Collider item in allCollider) {
+            foreach (Collider item in allCollider)
+            {
                 item.enabled = enableRagdoll; // enable all colliders  if ragdoll is set to enabled
             }
 
-            foreach(var ragdollRigidBody in ragdollRigidBodies) {
+            foreach (var ragdollRigidBody in ragdollRigidBodies)
+            {
                 ragdollRigidBody.useGravity = enableRagdoll; // make rigidbody use gravity if ragdoll is active
-                ragdollRigidBody.isKinematic = !enableRagdoll; // enable or disable kinematic accordig to enableRagdoll variable
+                ragdollRigidBody.isKinematic =
+                    !enableRagdoll; // enable or disable kinematic accordig to enableRagdoll variable
             }
 
-            foreach(Collider item in colliderToEnable) {
+            foreach (Collider item in colliderToEnable)
+            {
                 item.enabled = !enableRagdoll; // flip the normal colliders active state
             }
 
             GetComponent<Rigidbody>().useGravity = !enableRagdoll;
         }
-        
     }
 }
-
