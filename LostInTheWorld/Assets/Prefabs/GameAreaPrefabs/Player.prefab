@@ -1455,7 +1455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentFire: 100
-  _fireParticle: {fileID: 0}
+  _fireParticle: {fileID: 3960429296316929356}
 --- !u!95 &1554693360
 Animator:
   serializedVersion: 4
@@ -1693,7 +1693,8 @@ Transform:
   m_LocalPosition: {x: 0.000012107131, y: -0.07460106, z: -0.0035121012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3960429296316929394}
   m_Father: {fileID: 9052033385716184709}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2967,6 +2968,102 @@ Transform:
   m_Father: {fileID: 3454277527639297586}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3910711991783607276
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3589116751422733373}
+    m_Modifications:
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0992
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0244
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.51937
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.85454947
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 117.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183903, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183905, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_Name
+      value: CFXR4 Spaceship Thruster (Purple)
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595769183905, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50637595826365029, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_Intensity
+      value: 3.1228771
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674149620908402671, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 50637595769183901, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+--- !u!198 &3960429296316929356 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 50637595769183904, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+  m_PrefabInstance: {fileID: 3910711991783607276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3960429296316929394 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 50637595769183902, guid: 22fae2b5588a9e84084cdd7cedfe02c0, type: 3}
+  m_PrefabInstance: {fileID: 3910711991783607276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3910711991820922875
 PrefabInstance:
   m_ObjectHideFlags: 0
